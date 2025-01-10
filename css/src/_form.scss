@@ -1,0 +1,90 @@
+
+
+.text-field {
+	@include font;
+	display: inline-block;
+	padding: 6px 8px;
+	max-width: 100%;
+	font-size: 15px;
+	line-height: 1.5em;
+	border: 3px solid rgba( $grey, .1 );
+	border-radius: 5px;
+	background: rgba( $grey, .2 );
+}
+
+input[type=text], input[type=search], select, input[type=password] {
+	@extend .text-field;
+}
+
+button, input[type=submit] {
+	@extend .btn;
+}
+
+.gform_fields {
+	padding: 0 !important;
+}
+
+
+.gform_wrapper.gravity-theme .description, .gform_wrapper.gravity-theme .gfield_description, .gform_wrapper.gravity-theme .gsection_description, .gform_wrapper.gravity-theme .instruction {
+	@include font;
+}
+
+
+.gform_body {
+	padding: 15px 0;
+
+	// lets set some padding on all text fields.	
+	input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), textarea {
+		@extend .text-field;
+
+		&:focus {
+			border: 3px solid $grey;
+			outline: none;
+		}
+	}
+
+	// some styles for radio button fields
+	.gfield {
+		.gfield_label {
+			@include font;
+		}
+
+		&.inline-radio, &.donate-amount {
+			.gfield_radio {
+				width: auto !important;
+
+				li {
+					background: lighten( $grey, 50% );
+					padding: 7px 13px 10px !important;
+					margin-right: 5px;
+					border-radius: 5px;
+
+					@include respond-to( 768px ) {
+						float: left;
+					}
+				}
+			}
+		}
+
+		&.conditional-note {
+			font-size: .8em;
+			margin-top: -20px !important;
+			margin-bottom: 20px !important;
+		}
+		
+		&.gfield-has-description .gfield_description {
+			@include font;
+		}
+	}
+
+	// big huge green buttons for all form submit buttons.
+	.gform_footer {
+		input[type=submit], input[type=button], input[type=reset], button {
+			@extend .btn;
+			background-color: $grey;
+			color: white;
+		}
+	}
+
+}
+

@@ -1,0 +1,92 @@
+
+
+.separator {
+    @include border-bottom( $grey, 2 );
+
+    &.navy {
+        @include border-bottom( $navy, 2 );
+
+        &.large {
+            @include border-bottom( $navy, 'large' );
+        }
+    }
+
+    &.navy-light {
+        @include border-bottom( $navy-light, 2 );
+
+        &.large {
+            @include border-bottom( $navy-light, 'large' );
+        }
+    }
+
+    &.teal {
+        @include border-bottom( $teal, 2 );
+
+        &.large {
+            @include border-bottom( $teal, 'large' );
+        }
+    }
+
+    &.teal-light {
+        @include border-bottom( $teal-light, 2 );
+
+        &.large {
+            @include border-bottom( $teal-light, 'large' );
+        }
+    }
+
+    &.purple {
+        @include border-bottom( $purple, 2 );
+
+        &.large {
+            @include border-bottom( $purple, 'large' );
+        }
+    }
+
+    &.purple-light {
+        @include border-bottom( $purple-light, 2 );
+
+        &.large {
+            @include border-bottom( $purple-light, 'large' );
+        }
+    }
+
+    &.green {
+        @include border-bottom( $green, 2 );
+
+        &.large {
+            @include border-bottom( $green, 'large' );
+        }
+    }
+
+    &.green-light {
+        @include border-bottom( $green-light, 2 );
+
+        &.large {
+            @include border-bottom( $green-light, 'large' );
+        }
+    }
+
+    &.striped {
+        @include bg-grunge-gears;
+        height: 30px;
+
+        &:after {
+            background: url(../img/separator-striped.svg) center center no-repeat;
+            background-size: cover;
+            top: 5px;
+            height: 20px;
+            mask-image: none;
+        }
+
+        &.large {
+            height: 70px;
+
+            &:after {
+                top: 10px;
+                height: 50px;
+            }
+        }
+    }
+}
+

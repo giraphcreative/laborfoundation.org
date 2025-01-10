@@ -1,0 +1,70 @@
+
+
+.people-photos {
+    @include padding;
+    @include bg-grunge-gears;
+
+    h2 {
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    .people-photos-inner {
+        text-align: center;
+
+        @include respond-to( 450px ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -3%;
+        }
+
+        .person {
+            @include respond-to( 450px ) {
+                flex: 1;
+                flex-basis: 50%;
+                flex-grow: 0;
+                padding-right: 3%;
+            }
+
+            @include respond-to( $bp-l ) {
+                flex: 1;
+                flex-basis: 33.333%;
+                flex-grow: 0;
+                padding-right: 3%;
+            }
+
+            .person-photo {
+                mask: url(../img/mask-circle.svg) center center no-repeat;
+                mask-size: 100% 100%;
+
+                img {
+                    display: block;
+                }
+            }
+
+            .person-info {
+                padding-bottom: 15px;
+
+                h4 {
+                    @include font-bold;
+                    padding: 20px 0 0;
+                }
+
+                p {
+                    font-size: 1.2em;
+                    padding: 0 0 15px;
+                }
+
+                .bio {
+                    font-size: .8em;
+                }
+            }
+
+            &.navy .person-photo img { filter: tint-filter( 'navy' ); }
+            &.teal .person-photo img { filter: tint-filter( 'teal' ); }
+            &.purple .person-photo img { filter: tint-filter( 'purple' ); }
+            &.green .person-photo img { filter: tint-filter( 'green' ); }
+        }
+    }
+}
+

@@ -1,0 +1,92 @@
+{
+    "key": "group_647a024949c17",
+    "title": "Notice Bar",
+    "fields": [
+        {
+            "key": "field_647a024a80ba6",
+            "label": "Content",
+            "name": "notice_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Enter a message to display the notice bar (leave empty to hide it). If you're editing a page, it will only display for that page. If you're editing in the 'Theme Options' area, it will be global (site-wide).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_647a026280ba8",
+            "label": "Color",
+            "name": "notice_color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "The color scheme for this notice bar.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "choices": {
+                "grey": "Grey",
+                "navy": "Navy",
+                "teal": "Teal",
+                "purple": "Purple",
+                "green": "Green"
+            },
+            "default_value": "teal",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1720715764
+}

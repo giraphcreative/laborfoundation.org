@@ -1,0 +1,54 @@
+
+
+a.notice-bar-link {
+    text-decoration: none;
+}
+
+.notice-bar {
+    background: $grey;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: .85em;
+    position: relative;
+    @extend .content-style;
+
+    &.navy {
+        background: $navy;
+    }
+
+    &.teal {
+        background: $teal;
+    }
+
+    &.purple {
+        background: $purple;
+    }
+
+    &.green {
+        background: $green;
+    }
+
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    /*
+    a.close {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        height: 16px;
+        width: 16px;
+        margin-top: -8px;
+        color: transparent;
+        text-decoration: none;
+        text-indent: 1000;
+        overflow: hidden;
+        background: url(../img/notice-close.svg) center center / cover no-repeat;
+        cursor: pointer;
+    }
+    */
+}
+

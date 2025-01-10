@@ -1,0 +1,73 @@
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: 'Holtzman Textured';
+    src: url('fonts/holtzman-textured.woff2') format('woff2'),
+        url('fonts/holtzman-textured.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Eveleth';
+    src: url('fonts/eveleth-thin.woff2') format('woff2'),
+        url('fonts/eveleth-thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans';
+    src: url('fonts/museo-sans-regular.woff2') format('woff2'),
+        url('fonts/museo-sans-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Museo Sans Bold';
+    src: url('fonts/museo-sans-bold.woff2') format('woff2'),
+        url('fonts/museo-sans-bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin font-holtzman {
+    font-family: 'Holtzman Textured', sans-serif;
+    font-weight: normal;
+	line-height: 1em;
+    text-transform: uppercase;
+}
+
+@mixin font-eveleth {
+    font-family: 'Eveleth', sans-serif;
+    font-weight: normal;
+}
+
+@mixin font {
+	font-family: "Museo Sans", sans-serif;
+	font-weight: 400;
+}
+
+@mixin font-italic {
+	font-family: "Museo Sans", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@mixin font-bold {
+	font-family: "Museo Sans Bold", sans-serif;
+	font-weight: 700;
+}
+
+@mixin font-bold-italic {
+	font-family: "Museo Sans Bold", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}

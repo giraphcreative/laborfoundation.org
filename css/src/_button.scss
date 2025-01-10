@@ -1,0 +1,53 @@
+
+
+.buttons {
+	padding: 15px 0;
+}
+
+
+// general button styles
+.btn {
+	@include font-holtzman;
+	opacity: 1;
+	padding: 2px 15px 8px;
+	font-size: 1.8em;
+	line-height: 1.1em;
+	text-transform: uppercase;
+	transition: opacity 400ms ease-in-out;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+	background-color: $grey;
+	color: white;
+	-webkit-appearance: none;
+	border-radius: 0;
+	border: 3px solid;
+	background-color: $navy;
+	border-image: url(../img/border-mask-navy.png) 15 24;
+	color: white;
+
+	&:hover {
+		text-decoration: none;
+		opacity: .8;
+	}
+
+	&.green {
+		background-color: $green;
+		border-image: url(../img/border-mask-green.png) 15 24;
+		color: white;
+	}
+
+	&.purple {
+		background-color: $purple;
+		border-image: url(../img/border-mask-purple.png) 15 24;
+		color: white;
+	}
+
+	&.teal {
+		background-color: $teal;
+		border-image: url(../img/border-mask-teal.png) 15 24;
+		color: white;
+	}
+}
+

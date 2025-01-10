@@ -1,0 +1,49 @@
+
+
+.post-list-title {
+    @include padding;
+    text-transform: uppercase;
+
+    h2 {
+        font-size: 3.2em;
+        color: $navy;
+        text-align: center;
+    }
+}
+
+.post-list {
+    @include padding;
+}
+
+.post-list-container {
+    @include bg-grunge-gears;
+
+    &.grunge-gears-grey {
+        @include bg-grunge-gears-grey;
+    }
+
+    &.gears {
+        @include bg-gears;
+
+        h2 {
+            color: white;
+        }
+
+        .article-cards {
+            .entry {
+                a {
+                    color: white;
+                }
+
+                p {
+                    color: white;
+                }
+
+                .btn {
+                    border: 3px solid white;
+                    border-image: url(../img/border-mask-transparent-white.png) 30 30;
+                }
+            }
+        }
+    }
+}

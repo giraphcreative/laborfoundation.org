@@ -1,0 +1,115 @@
+
+
+.rates {
+    @include padding;
+    background: linear-gradient( 90deg, rgba( $navy-light, 1 ) 0%, rgba( $navy, 1 ) 15%, rgba( $navy-light, 1 ) 85%, rgba( $teal, 1 ) 100% );
+    @include border-top( $purple, 4 );
+    color: white;
+    
+    @include respond-to( $bp-s ) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    @include respond-to( $bp-l ) {
+        flex-wrap: nowrap;
+    }
+
+    .rate {
+        padding: 15px 1.5%;
+        text-align: center;
+        
+        @include respond-to( $bp-s ) {
+            flex: 0 0 50%;
+        }
+        
+        @include respond-to( $bp-l ) {
+            flex: 1;
+            border-left: 3px solid;
+            border-image: url(../img/border-mask-transparent-white.png) 30 30;
+            padding: 0 1.5%;
+
+            &.intro {
+                text-align: left;
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+
+        h2 {
+            font-size: 50px;
+            line-height: 1em;
+            color: white;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .btn {
+            color: white;
+            background: transparent;
+            border-color: white;
+            border-image: url(../img/border-mask-transparent-white.png) 30 30;
+            opacity: .7;
+            font-size: 1.2em;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            padding: 0 0 10px;
+        }
+
+        .product {
+            @include font-holtzman;
+            font-size: 40px;
+            line-height: 40px;
+        }
+
+        p {
+            padding: 0;
+            opacity: .7;
+        }
+
+        .amount {
+            display: inline-block;
+            position: relative;
+            @include font-holtzman;
+            font-size: 100px;
+            line-height: 100px;
+            margin-top: -35px;
+            margin-right: 21px;
+
+            &:before {
+                position: absolute;
+                content: "%";
+                top: -3px;
+                right: -36px;
+                font-size: 63px;
+            }
+
+            &:after {
+                position: absolute;
+                content: "APR";
+                bottom: -31px;
+                right: -27px;
+                font-size: 23px;
+            }
+        }
+
+        &.apy .amount:after {
+            content: "APY";
+        }
+    }
+}
+

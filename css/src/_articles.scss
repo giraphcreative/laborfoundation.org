@@ -1,0 +1,120 @@
+
+
+.article-cards {
+    @include respond-to( $bp-s ) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -3%;
+    }
+
+    @include respond-to( $bp-s ) {
+        margin-right: -5%;
+    }
+
+    .entry {
+        margin: 0 0 20px;
+
+        @include respond-to( $bp-s ) {
+            flex: 0 0 50%;
+            margin: 0 3% 3% 0;
+        }
+
+        @include respond-to( $bp-m ) {
+            flex: 0 0 28.3333%;
+            margin: 0 5% 5% 0;
+        }
+    
+        .entry-thumbnail {
+            position: relative;
+
+            img {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        &.navy .entry-thumbnail { 
+            background: $navy; 
+            img { @include tint( 'navy' ) }
+        }
+        &.teal .entry-thumbnail {
+            background: $teal; 
+            img { @include tint( 'teal' ) }
+        }
+        &.purple .entry-thumbnail { 
+            background: $purple;
+            img { @include tint( 'purple' ) }
+        }
+        &.green .entry-thumbnail { 
+            background: $green;
+            img { @include tint( 'green' ) }
+        }
+
+        h4 {
+            font-size: 1.1em;
+
+            a {
+                color: $navy;
+            }
+        }
+
+        p {
+            font-size: .9em;
+        }
+
+        .post-date {
+            padding: 0;
+            opacity: .7;
+            font-size: .85em;
+        }
+    }
+}
+
+
+.single-post {
+    section.content {
+        border-top: 15px solid rgba( $grey, .2 );
+    }
+}
+
+.content-wide.article {
+    .post-date {
+        color: $grey;
+        font-size: .9em;
+    }
+
+    .post-thumbnail {
+        max-width: 400px;
+        margin: 20px auto;
+        position: relative;
+
+        @include respond-to( $bp-m ) {
+            margin: 0 0 20px 20px;
+            float: right;    
+        }
+
+        img {
+            display: block;
+        }
+    }
+    &.navy .post-thumbnail { 
+        background: $navy; 
+        img { @include tint( 'navy' ) }
+    }
+    &.teal .post-thumbnail { 
+        background: $teal; 
+        img { @include tint( 'teal' ) }
+    }
+    &.purple .post-thumbnail { 
+        background: $purple; 
+        img { @include tint( 'purple' ) }
+    }
+    &.green .post-thumbnail { 
+        background: $green; 
+        img { @include tint( 'green' ) }
+    }
+
+    h1 {
+        color: $navy;
+    }
+}

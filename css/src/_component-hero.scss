@@ -1,0 +1,42 @@
+
+
+.hero {
+    min-height: 300px;
+    display: flex;
+    background: center center no-repeat;
+    background-size: cover;
+
+    @include respond-to( $bp-m ) {
+        min-height: 450px;
+    }
+
+    .hero-inner {
+        @include padding-side( 60px, 60px );
+        flex: 1;
+        align-self: flex-end;
+
+        h1, h2, h3, h4, h5, h6, p {
+            color: white;
+            text-shadow: 0 0 20px rgba( black, .7 );
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+    }
+
+    &.bottom-left {
+        .hero-inner {
+            @include respond-to( $bp-m ) {
+                max-width: 55%;
+            }
+        }
+    }
+
+    &.bottom-center {
+        .hero-inner {
+            text-align: center;
+        }
+    }
+}
+

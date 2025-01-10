@@ -1,0 +1,32 @@
+
+
+.promotion {
+    @include padding;
+
+    &.navy {
+        background: linear-gradient( 90deg, rgba( $navy-light, 1 ) 0%, rgba( $navy, 1 ) 15%, rgba( $navy-light, 1 ) 85%, rgba( $teal, 1 ) 100% );
+        @include border-top( $purple, 4 );
+    }
+
+    &.teal {
+        background: linear-gradient( 90deg, rgba( $teal-light, 1 ) 0%, rgba( $teal, 1 ) 15%, rgba( $teal-light, 1 ) 85%, rgba( $teal, 1 ) 100% );
+        @include border-top( $navy, 1 );
+    }
+
+    &.green {
+        background: linear-gradient( 90deg, rgba( $green-light, 1 ) 0%, rgba( $green, 1 ) 15%, rgba( $green-light, 1 ) 85%, rgba( $green, 1 ) 100% );
+        @include border-top( $purple, 1 );
+    }
+
+    &.purple {
+        background: linear-gradient( 90deg, rgba( $purple-light, 1 ) 0%, rgba( $purple, 1 ) 15%, rgba( $purple-light, 1 ) 85%, rgba( $purple, 1 ) 100% );
+        @include border-top( $green, 1 );
+    }
+    
+    @include respond-to( $bp-m ) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+

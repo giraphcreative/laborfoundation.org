@@ -1,0 +1,79 @@
+
+
+.content-two-column {
+    @include padding;
+    @include bg-grunge-gears;
+
+    &.has-background {
+        background: center center no-repeat;
+        background-size: cover;
+    }
+
+    &.text-white {
+        h1, h2, h3, h4, h5, h6, p, li {
+            color: white;
+        }
+    }
+    
+    .column-one, .column-two {
+        @extend .content-style;
+    }
+
+    @include respond-to( $bp-m ) {
+        .content-columns {
+            display: flex;
+
+            .column-one {
+                flex: 1;
+                padding-right: 5%;
+            }
+
+            .column-two {
+                flex: 1;
+            }
+        }
+
+        .content-columns.wide-left {
+            .column-one {
+                flex: 1 1 60%;
+                padding-right: 5%;
+            }
+
+            .column-two {
+                flex: 1 1 35%;
+            }
+        }
+
+        .content-columns.wide-right {
+            .column-one {
+                flex: 1 1 35%;
+                padding-right: 5%;
+            }
+
+            .column-two {
+                flex: 1 1 60%;
+            }
+        }
+    }
+
+    &.no-pad {
+        @include padding-side( 0, 0 );
+    }
+
+    &.no-pad-top {
+        @include padding-side( 0, 30px );
+    }
+
+    &.no-pad-bottom {
+        @include padding-side( 30px, 0 );
+    }
+
+    &.pad-tall {
+        @include padding-side( 50px, 50px );
+    }
+
+    &.center .content-columns {
+        align-items: center;
+    }
+}
+

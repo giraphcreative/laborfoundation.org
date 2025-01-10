@@ -1,0 +1,126 @@
+
+// responsive mixin
+@mixin respond-to( $breakpoint ) {
+    @media only screen and ( min-width: $breakpoint ) { @content; }
+}
+
+// Clearfix mixin
+@mixin clearfix {
+	zoom: 1;
+
+	&:before, &:after { 
+		content: ""; 
+		display: table;
+	}
+
+	&, &:before, &:after { clear: both; }
+}
+
+@mixin wrap( $max-width ) {
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+@mixin wrap-main {
+	@include wrap( $bp-xl );
+}
+
+@mixin padding {
+	padding: 30px;
+	@include respond-to( $bp-l ) { padding: 30px 50px; }
+	@include respond-to( $bp-xl ) { padding: 35px 70px; }
+	@include respond-to( $bp-xxl ) { padding: 50px 90px; }
+}
+
+@mixin padding-side( $top: 0, $bottom: 0 ) {
+	padding: $top 30px $bottom;
+	@include respond-to( $bp-l ) { padding: $top 50px $bottom; }
+	@include respond-to( $bp-xl ) { padding: $top 70px $bottom; }
+	@include respond-to( $bp-xxl ) { padding: $top 90px $bottom; }
+}
+
+@mixin border-top( $color, $variant:1, $zindex:500 ) {
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		@if $zindex != 0 { z-index: $zindex; }
+		top: -6px;
+		left: 0;
+		height: 12px;
+		width: 100%;
+		background-color: $color;
+		mask-image: url(../img/border-#{$variant}.svg);
+		mask-size: cover;
+		mask-position: center center;
+
+		@include respond-to( $bp-l ) {
+			mask-size: 100% 100%;
+		}
+	}
+}
+
+@mixin border-bottom( $color, $variant:1, $zindex:500 ) {
+	position: relative;
+
+	@if $variant == 'large' {
+		height: 20px;
+
+		@include respond-to( $bp-l ) {
+			height: 40px;
+		}
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		@if $zindex != 0 { z-index: $zindex; }
+		top: -6px;
+		left: 0;
+		height: 12px;
+		width: 100%;
+		background-color: $color;
+		mask-image: url(../img/border-#{$variant}.svg);
+		mask-size: cover;
+		mask-position: center center;
+		
+		@if $variant == 'large' {
+			height: 50px;
+			top: -18px;
+
+			@include respond-to( $bp-l ) {
+				height: 70px;
+			}
+		}
+	}
+}
+
+@mixin bg-grunge-gears {
+	background: white url(../img/bg-grunge-gears.png) center center no-repeat fixed;
+}
+
+@mixin bg-grunge-gears-grey {
+	background: #e5e6e7 url(../img/bg-grunge-gears.png) center center no-repeat fixed;
+}
+
+@mixin bg-gears {
+	background: $teal url(../img/bg-gears.jpg) center center / cover no-repeat;
+}
+
+@function tint-filter( $color:'navy' ) {
+	@if $color == 'navy' {
+		@return sepia(100%) saturate(250%) brightness(80%) hue-rotate(175deg) opacity(100%);
+	} @else if $color == 'teal' {
+		@return sepia(100%) saturate(250%) brightness(100%) hue-rotate(161deg) opacity(100%);
+	} @else if $color == 'purple' {
+		@return sepia(100%) saturate(250%) brightness(100%) hue-rotate(220deg) opacity(100%);
+	} @else if $color == 'green' {
+		@return sepia(100%) saturate(250%) brightness(100%) hue-rotate(80deg) opacity(100%);
+	} 
+}
+
+@mixin tint( $color:'navy' ) {
+	filter: tint-filter( $color );
+}
+

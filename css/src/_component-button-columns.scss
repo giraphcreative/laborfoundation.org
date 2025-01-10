@@ -1,0 +1,95 @@
+
+
+.button-columns {
+    @include padding;
+
+    &.grey {
+        background: $grey-light;
+    }
+
+    h2 {
+        padding: 0 0 10px 0;
+    }
+
+    .button-columns-inner {
+        @include respond-to( 500px ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -2%;
+        }
+
+        @include respond-to( $bp-l ) {
+            margin-right: -1%;
+        }
+
+        .column {
+            position: relative;
+            background: white;
+
+            @include respond-to( 500px ) {
+                flex: 1;
+                flex-basis: 48%;
+                margin-right: 2%;
+                margin-bottom: 2%;
+            }
+
+            @include respond-to( $bp-m ) {
+                flex-basis: 31.3333%;
+            }
+
+            @include respond-to( $bp-l ) {
+                flex: 1;
+                margin-right: 1%;
+                margin-bottom: 1%;
+            }
+
+            .column-image {
+                text-align: center;
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+
+            .column-content {
+                padding: 10px 20px 45px 20px;
+                min-height: 70%;
+            }
+
+            &.navy {
+                border: 2px solid $navy;
+                .column-content { background: rgba( $navy, .1 ); }
+            }
+
+            &.green {
+                border: 2px solid $green;
+                .column-content { background: rgba( $green, .1 ); }
+            }
+
+            &.purple {
+                border: 2px solid $purple;
+                .column-content { background: rgba( $purple, .1 ); }
+            }
+
+            &.teal {
+                border: 2px solid $teal;
+                .column-content { background: rgba( $teal, .1 ); }
+            }
+
+            &.grey {
+                border: 2px solid $grey;
+                .column-content { background: rgba( $grey, .1 ); }
+            }
+
+            .btn {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display: block;
+            }
+        }
+    }
+}
+
