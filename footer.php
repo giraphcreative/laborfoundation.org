@@ -33,6 +33,9 @@
 					<h4><?php print wp_get_nav_menu_name("footer-menu-three" ); ?></h4>
 					<?php wp_nav_menu( array( 'theme_location' => 'footer-menu-three', 'menu_class' => 'nav-menu' ) ); ?>
 				</div>
+				<div class="footer-menu certification">
+					<a href="https://app.candid.org/profile/14664031" target="_blank"><img src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/14664031/svg" /></a>
+				</div>
 			</div>
 		</div>
 		<div class="footer-columns">
